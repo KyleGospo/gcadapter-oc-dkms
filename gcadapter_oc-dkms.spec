@@ -14,6 +14,8 @@ BuildArch:  noarch
 Source0:    gcadapter_oc.c
 Source1:    Makefile
 Source2:    dkms.conf
+Source3:    LICENSE
+Source4:    README.md
 
 Provides:   %{dkms_name}-dkms = %{version}
 Requires:   dkms
@@ -23,7 +25,7 @@ Kernel module for overclocking the Nintendo Wii U/Mayflash GameCube adapter. The
 
 %prep
 %setup -q -T -c -n %{name}-%{version}
-cp %{SOURCE0} %{SOURCE1} %{SOURCE2} .
+cp %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} .
 
 %build
 
@@ -48,6 +50,8 @@ dkms install -m %{dkms_name} -v %{version} -q --force || :
 dkms remove -m %{dkms_name} -v %{version} -q --all || :
 
 %files
+%license LICENSE
+%doc README.md
 %{_usrsrc}/%{dkms_name}-%{version}
 %{_sysconfdir}/modules-load.d/gcadapter_oc.conf
 
