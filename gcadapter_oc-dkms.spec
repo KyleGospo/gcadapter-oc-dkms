@@ -9,13 +9,7 @@ License:    GPLv2
 URL:        https://github.com/KyleGospo/gcadapter-oc-dkms
 BuildArch:  noarch
 
-# Source files:
-# https://github.com/HannesMann/gcadapter-oc-kmod
-Source0:    gcadapter_oc.c
-Source1:    Makefile
-Source2:    dkms.conf
-Source3:    LICENSE
-Source4:    README.md
+Source:     {{{ git_dir_pack }}}
 
 Provides:   %{dkms_name}-dkms = %{version}
 Requires:   dkms
@@ -24,12 +18,13 @@ Requires:   dkms
 Kernel module for overclocking the Nintendo Wii U/Mayflash GameCube adapter. The default overclock is from 125 Hz to 1000 Hz.
 
 %prep
-%setup -q -T -c -n %{name}-%{version}
-cp %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} .
+{{{ git_dir_setup_macro }}}
 
 %build
 
 %install
+#Remove unneeded folder
+rm -rf packaging
 # Create empty tree
 mkdir -p %{buildroot}%{_usrsrc}/%{dkms_name}-%{version}/
 cp -fr * %{buildroot}%{_usrsrc}/%{dkms_name}-%{version}/
