@@ -16,6 +16,6 @@ You can change the rate by using the kernel parameter `gcadapter_oc.rate=n` (if 
 
 ## Installing
 
-You can get releases for Fedora, RHEL, CentOS, OpenSUSE, and OpenMandriva from my [COPR](https://copr.fedorainfracloud.org/coprs/kylegospo/gcadapter_oc-dkms/).
+You can get releases for Fedora, RHEL, CentOS, OpenSUSE, and OpenMandriva from my [Copr](https://copr.fedorainfracloud.org/coprs/kylegospo/gcadapter_oc-dkms/).
 
 If you wish to use this with Secure Boot, follow [this guide](https://gist.github.com/KyleGospo/9adbe078d1d7f160ae43c091df98f773).
