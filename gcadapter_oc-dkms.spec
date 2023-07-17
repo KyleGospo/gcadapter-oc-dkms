@@ -6,7 +6,7 @@ Version:    {{{ git_dir_version }}}
 Release:    1%{?dist}
 Summary:    Kernel module for overclocking the Nintendo Wii U/Mayflash GameCube adapter.
 License:    GPLv2
-URL:        https://github.com/KyleGospo/gcadapter-oc-dkms
+URL:        https://github.com/KyleGospo/gcadapter_oc-dkms
 BuildArch:  noarch
 
 Source:     {{{ git_dir_pack }}}
